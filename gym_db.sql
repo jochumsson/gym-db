@@ -38,6 +38,7 @@ DROP TABLE IF EXISTS `competition`;
 CREATE TABLE `competition` (
   `competition_name` varchar(128) NOT NULL,
   `competition_date` date NOT NULL,
+  `competition_type` varchar(128) DEFAULT NULL,
   `closed` tinyint(1) DEFAULT NULL,
   `team_competition` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`competition_name`)
@@ -268,4 +269,4 @@ CREATE TABLE `result` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-28 22:14:34
+-- Dump completed on 2018-09-08 15:24:33
