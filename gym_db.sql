@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Linux (i686)
+-- MySQL dump 10.13  Distrib 5.7.24, for Win64 (x86_64)
 --
 -- Host: localhost    Database: gym_db
 -- ------------------------------------------------------
--- Server version	5.7.17-0ubuntu0.16.04.2
+-- Server version	5.7.24
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,6 +29,16 @@ CREATE TABLE `apparatus` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `apparatus`
+--
+
+LOCK TABLES `apparatus` WRITE;
+/*!40000 ALTER TABLE `apparatus` DISABLE KEYS */;
+INSERT INTO `apparatus` VALUES ('Balance Beam'),('Floor'),('Jump 1'),('Jump 2'),('Uneven Bars');
+/*!40000 ALTER TABLE `apparatus` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `competition`
 --
 
@@ -44,6 +54,15 @@ CREATE TABLE `competition` (
   PRIMARY KEY (`competition_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `competition`
+--
+
+LOCK TABLES `competition` WRITE;
+/*!40000 ALTER TABLE `competition` DISABLE KEYS */;
+/*!40000 ALTER TABLE `competition` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `competition_gymnast`
@@ -67,6 +86,15 @@ CREATE TABLE `competition_gymnast` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `competition_gymnast`
+--
+
+LOCK TABLES `competition_gymnast` WRITE;
+/*!40000 ALTER TABLE `competition_gymnast` DISABLE KEYS */;
+/*!40000 ALTER TABLE `competition_gymnast` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `competition_judgement`
 --
 
@@ -85,6 +113,15 @@ CREATE TABLE `competition_judgement` (
   PRIMARY KEY (`competition_name`,`apparatus`,`level`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `competition_judgement`
+--
+
+LOCK TABLES `competition_judgement` WRITE;
+/*!40000 ALTER TABLE `competition_judgement` DISABLE KEYS */;
+/*!40000 ALTER TABLE `competition_judgement` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `competition_result`
@@ -110,7 +147,16 @@ CREATE TABLE `competition_result` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary view structure for view `competition_result_cop_view`
+-- Dumping data for table `competition_result`
+--
+
+LOCK TABLES `competition_result` WRITE;
+/*!40000 ALTER TABLE `competition_result` DISABLE KEYS */;
+/*!40000 ALTER TABLE `competition_result` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `competition_result_cop_view`
 --
 
 DROP TABLE IF EXISTS `competition_result_cop_view`;
@@ -169,7 +215,16 @@ CREATE TABLE `competition_score` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Temporary view structure for view `competition_score_cop_view`
+-- Dumping data for table `competition_score`
+--
+
+LOCK TABLES `competition_score` WRITE;
+/*!40000 ALTER TABLE `competition_score` DISABLE KEYS */;
+/*!40000 ALTER TABLE `competition_score` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `competition_score_cop_view`
 --
 
 DROP TABLE IF EXISTS `competition_score_cop_view`;
@@ -209,6 +264,15 @@ CREATE TABLE `judge` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `judge`
+--
+
+LOCK TABLES `judge` WRITE;
+/*!40000 ALTER TABLE `judge` DISABLE KEYS */;
+/*!40000 ALTER TABLE `judge` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `result`
 --
 
@@ -223,6 +287,16 @@ CREATE TABLE `result` (
   CONSTRAINT `result_apparatus_fk` FOREIGN KEY (`apparatus`) REFERENCES `apparatus` (`apparatus_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `result`
+--
+
+LOCK TABLES `result` WRITE;
+/*!40000 ALTER TABLE `result` DISABLE KEYS */;
+INSERT INTO `result` VALUES ('Balance Beam','Balance Beam'),('WAG All Arround','Balance Beam'),('Floor','Floor'),('WAG All Arround','Floor'),('Jump','Jump 1'),('WAG All Arround','Jump 1'),('Jump','Jump 2'),('WAG All Arround','Jump 2'),('Uneven Bars','Uneven Bars'),('WAG All Arround','Uneven Bars');
+/*!40000 ALTER TABLE `result` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Final view structure for view `competition_result_cop_view`
@@ -269,4 +343,4 @@ CREATE TABLE `result` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-08 15:24:33
+-- Dump completed on 2018-11-03 20:07:52
